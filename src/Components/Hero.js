@@ -61,7 +61,7 @@ function Hero() {
 
                 {isOpen ? (
                   //make modal
-                  <Modal />
+                  <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
                 ) : null}
               </div>
             </div>

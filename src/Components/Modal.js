@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const Modal = () => {
+const Modal = ({ isOpen, setIsOpen }) => {
   const [page, setPage] = useState(1);
 
   function goNextPage() {
     //stop on last page
     setPage((page) => page + 1);
-    if (page === 4) {
-      setPage(4);
+    if (page === 3) {
+      setIsOpen(false);
     }
   }
 
@@ -17,6 +17,10 @@ const Modal = () => {
     if (page === 1) {
       setPage(1);
     }
+  }
+
+  function closeModel() {
+    setIsOpen(false);
   }
 
   const [style, setStyle] = useState(false);
@@ -29,13 +33,13 @@ const Modal = () => {
             {page === 1 && <Component1 />}
             {page === 2 && <Component2 />}
             {page === 3 && <Component3 />}
-            {page === 4 && <Component4 />}
           </div>
 
           <button onClick={goBackPage} className="btns">
             Back
           </button>
-          <button onClick={goNextPage}>Next</button>
+          <button onClick={goNextPage}>{page == 3 ? "Submit" : "Next"}</button>
+          <button onClick={closeModel}>Close</button>
         </div>
       </div>
     </div>
@@ -64,14 +68,6 @@ function Component3() {
   return (
     <div>
       <h1>three</h1>
-    </div>
-  );
-}
-
-function Component4() {
-  return (
-    <div>
-      <h1>Four</h1>
     </div>
   );
 }
