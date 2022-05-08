@@ -147,7 +147,6 @@ function Component3({ newModals, setNewModals, setIsOpens }) {
         </div>
         <button>Left button</button>
         <button onClick={showModal}>Pop Message</button>
-        {newModals && <h1>modal is open</h1>}
       </div>
     </div>
   );

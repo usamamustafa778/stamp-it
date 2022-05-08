@@ -8,8 +8,6 @@ function Hero() {
   const [isOpen, setIsOpen] = useState(false);
   const [newModal, setNewModal] = useState(false);
 
-  console.log(newModal);
-
   const modal = () => {
     setIsOpen(!isOpen);
   };
@@ -39,6 +37,7 @@ function Hero() {
                 </div>
               </div>
               <div>
+                <h1>message is tdasfdasd</h1>
                 <h1>message is tdasfdasd</h1>
               </div>
             </div>
