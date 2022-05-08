@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+@import url(//db.onlinewebfonts.com/c/ff9f9b187dc224f3f985a8fadbd88d45?family=AllRoundGothicW01-Medium);
+
+* {
+  margin: 0;
+  --yellow: #FCAF00;
+  --white: #ffff;
+  --red: #DF2839;
+  --green: #038E80;
+  font-family: "AllRoundGothicW01-Medium";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: "AllRoundGothicW01-Medium";
+  src: url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.eot");
+  src: url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.woff") format("woff"), url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ff9f9b187dc224f3f985a8fadbd88d45.svg#AllRoundGothicW01-Medium") format("svg");
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-green{
+  color: var(--green);
+}
+.text-red{
+  color: var(--red);
+}
+.text-yellow{
+  color: var(--yellow);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Button */
+.btn-yellow{
+  background-color: var(--white);
+  border-radius: 50px;
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  color: var(--yellow);
+  text-decoration: none;
+  transition: 0.25s;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-yellow:hover{
+  color: var(--white);
+  background-color: var(--yellow);
+  text-decoration: none;
 }
