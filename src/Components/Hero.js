@@ -12,6 +12,12 @@ function Hero() {
   };
   return (
     <div id="hero" className="container-fluid pt-5 hero">
+      <div className="row justify-content-center">
+        {isOpen ? (
+          //make modal
+          <Modal />
+        ) : null}
+      </div>
       <div className="container pt-5 mt50-s">
         <div className="row text-white">
           <div className="col-md-6">
@@ -58,11 +64,6 @@ function Hero() {
                     </a>
                   </div>
                 </div>
-
-                {isOpen ? (
-                  //make modal
-                  <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-                ) : null}
               </div>
             </div>
           </div>

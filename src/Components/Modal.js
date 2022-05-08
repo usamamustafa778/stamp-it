@@ -28,18 +28,27 @@ const Modal = ({ isOpen, setIsOpen }) => {
   return (
     <div className="Model">
       <div className="parent-div">
+        <div className="row justify-content-end">
+          <div onClick={closeModel}>
+            <img src="/images/icons/cross.png" className="close" alt="" />
+          </div>
+        </div>
         <div className="component-div">
           <div className="display">
             {page === 1 && <Component1 />}
             {page === 2 && <Component2 />}
             {page === 3 && <Component3 />}
           </div>
-
-          <button onClick={goBackPage} className="btns">
-            Back
-          </button>
-          <button onClick={goNextPage}>{page == 3 ? "Submit" : "Next"}</button>
-          <button onClick={closeModel}>Close</button>
+          <div className="row justify-content-center mt-2">
+            <div className="col-md-6 d-flex justify-content-between">
+            <div onClick={goBackPage} className="btns text-gray btn-modal">
+            &lt; zurück
+          </div>
+          <div className="text-green btn-modal" onClick={goNextPage}>
+            {page == 3 ? "Submit" : "weiter >"}
+          </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -50,24 +59,77 @@ export default Modal;
 
 function Component1() {
   return (
-    <div>
-      <h1>one</h1>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-10 mt-2">
+          <h5 className="text-red text-center">
+            Um deine Registrierung abzuschließen, beantworte bitte folgende
+            Fragen
+          </h5>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-md-12">
+          <p>Was sind deine Engpässe/Probleme?</p>
+        </div>
+        <div className="col-md-12">
+          <textarea
+            className="w-100 Engp"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
     </div>
   );
 }
 
 function Component2() {
   return (
-    <div>
-      <h1>two</h1>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-10 mt-2">
+          <h6 className="text-red text-center">
+            Um deine Registrierung abzuschließen, beantworte bitte folgende
+            Fragen
+          </h6>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-md-12">
+          <p>Würdest du unser Konzept nutzen und wenn ja, warum?</p>
+        </div>
+        <div className="col-md-12">
+          <textarea
+            className="w-100 Engp"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
     </div>
   );
 }
 
 function Component3() {
   return (
-    <div>
-      <h1>three</h1>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-10 mt-2">
+          <h6 className="text-red text-center">
+          Vielen Dank für dein Feedback!
+          </h6>
+        </div>
+      </div>
+      <div className="row mt-4">
+        <div className="col-md-10">
+          <p>Danke, dass du Dir die Zeit genommen hast, diese Fragen zu beantworten! Schließe jetzt deine Registrierung ab und werde ein Teil von etwas ganz Großem.</p>
+        </div>
+      </div>
     </div>
   );
 }
