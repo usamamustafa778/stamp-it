@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
+import Modal from "./Modal";
 import "./style.css";
 
 function Hero() {
+  //model making the state
+  const [isOpen, setIsOpen] = useState(false);
+
+  const modal = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div id="hero" className="container-fluid pt-5 hero">
       <div className="container pt-5 mt50-s">
@@ -46,14 +53,26 @@ function Hero() {
                 </div>
                 <div className="row mt-5">
                   <div className="col-md-12">
-                    <Button/>
+                    <a className="btn-yellow" onClick={modal}>
+                      Jetzt registrieren
+                    </a>
                   </div>
                 </div>
+
+                {isOpen ? (
+                  //make modal
+                  <Modal />
+                ) : null}
               </div>
             </div>
           </div>
+
           <div className="col-md-6">
-              <img src="/images/Phone-Card.png" className="w-100 mt100-s" alt="" />
+            <img
+              src="/images/Phone-Card.png"
+              className="w-100 mt100-s"
+              alt=""
+            />
           </div>
         </div>
       </div>
