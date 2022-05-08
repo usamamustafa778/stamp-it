@@ -6,16 +6,43 @@ import "./style.css";
 function Hero() {
   //model making the state
   const [isOpen, setIsOpen] = useState(false);
+  const [newModal, setNewModal] = useState(false);
+
+  console.log(newModal);
 
   const modal = () => {
     setIsOpen(!isOpen);
   };
+
+  function closeModel() {
+    setNewModal(false);
+  }
+
   return (
     <div id="hero" className="container-fluid pt-5 hero">
       <div className="row justify-content-center">
         {isOpen ? (
           //make modal
-          <Modal />
+          <Modal
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            newModal={newModal}
+            setNewModal={setNewModal}
+          />
+        ) : null}
+        {newModal ? (
+          <div className="Model">
+            <div className="parent-div">
+              <div className="row justify-content-end">
+                <div onClick={closeModel}>
+                  <img src="/images/icons/cross.png" className="close" alt="" />
+                </div>
+              </div>
+              <div>
+                <h1>message is tdasfdasd</h1>
+              </div>
+            </div>
+          </div>
         ) : null}
       </div>
       <div className="container pt-5 mt50-s">
