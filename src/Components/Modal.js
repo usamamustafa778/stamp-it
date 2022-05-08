@@ -31,6 +31,7 @@ const Modal = ({ isOpen, setIsOpen, setNewModal, newModal }) => {
         <div className="row justify-content-end">
           <div onClick={closeModel}>
             <img src="/images/icons/cross.png" className="close" alt="" />
+            <h1>{page}/3</h1>
           </div>
         </div>
         <div className="component-div">
