@@ -31,7 +31,6 @@ const Modal = ({ isOpen, setIsOpen, setNewModal, newModal }) => {
         <div className="row justify-content-end">
           <div onClick={closeModel}>
             <img src="/images/icons/cross.png" className="close" alt="" />
-            <h1>{page}/3</h1>
           </div>
         </div>
         <div className="component-div">
@@ -49,10 +48,11 @@ const Modal = ({ isOpen, setIsOpen, setNewModal, newModal }) => {
           <div className="row justify-content-center mt-2">
             <div className="col-md-6 d-flex justify-content-between">
               <div onClick={goBackPage} className="btns text-gray btn-modal">
-                &lt; zurück
+                {/* &lt;  */}
+                {page == 3 ? "Abbrechen" : "< zurück"}
               </div>
               <div className="text-green btn-modal" onClick={goNextPage}>
-                {page == 3 ? "Submit" : "weiter >"}
+                {page == 3 ? "Jetzt registrieren" : "weiter >"}
               </div>
             </div>
           </div>
@@ -69,15 +69,16 @@ function Component1() {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-10 mt-2">
-          <h5 className="text-red text-center">
+          <h6 className="text-red text-center">
             Um deine Registrierung abzuschließen, beantworte bitte folgende
             Fragen
-          </h5>
+          </h6>
         </div>
       </div>
       <div className="row mt-4">
-        <div className="col-md-12">
+        <div className="col-md-12 d-flex align-items-center justify-content-between">
           <p>Was sind deine Engpässe/Probleme?</p>
+          <p>1/3</p>
         </div>
         <div className="col-md-12">
           <textarea
@@ -105,8 +106,9 @@ function Component2() {
         </div>
       </div>
       <div className="row mt-4">
-        <div className="col-md-12">
+        <div className="col-md-12 d-flex align-items-center justify-content-between">
           <p>Würdest du unser Konzept nutzen und wenn ja, warum?</p>
+          <p>2/3</p>
         </div>
         <div className="col-md-12">
           <textarea
@@ -122,13 +124,8 @@ function Component2() {
   );
 }
 
-function Component3({ newModals, setNewModals, setIsOpens }) {
+function Component3() {
   //show modal
-  function showModal() {
-    setIsOpens(false);
-    setNewModals(true);
-  }
-
   return (
     <div className="container">
       <div className="row justify-content-center">
@@ -146,8 +143,14 @@ function Component3({ newModals, setNewModals, setIsOpens }) {
             Teil von etwas ganz Großem.
           </p>
         </div>
-        <button>Left button</button>
-        <button onClick={showModal}>Pop Message</button>
+        <div className="col-md-2 d-flex justify-content-end">
+          <p>3/3</p>
+        </div>
+      </div>
+      <div className="row py-4">
+        <div className="col-md-12" style={{fontSize:"12px"}}>
+          * Mit der Registrierung stimmst du XXXXXXXXXXXX zu.
+        </div>
       </div>
     </div>
   );
